@@ -1,0 +1,41 @@
+<div class="col-12  col-sm-6 col-md-4 align-items-center">
+  <div class="card" style="width: 18rem">
+    <div  id="divWeatherMain">
+     
+      <div class="weatherWidgetRow" style="font-size: 40px; margin-top: 5px">
+          {{ weatherData.temp_celcius }}°
+      </div>
+      <div class="weatherWidgetRow" style="font-size: 20px">
+          {{ weatherData.temp_min }}° / {{ weatherData.temp_max }}°
+      </div>
+      <!-- <div class="weatherWidgetRow" style="font-size: 20px">
+          Feels Like: {{ weatherData.temp_feels_like }}°
+      </div> -->
+      <div class="weatherWidgetRow" style="font-size: 35px; margin-top: 10px">
+          {{ weatherData.name }}
+      </div>
+      <div class="weatherWidgetRow" style="font-size: 20px">
+          Humidity: {{ weatherData.main.humidity }}%
+      </div>
+  </div>
+    <div class="card-body">
+      <form class="card-title"
+      [formGroup]='weatherSearchForm' 
+      (ngSubmit)="sendToOpenWeatherApi(weatherSearchForm.value)">
+        <div class="form-group">
+          <input
+            class="form-control"
+            type="text"
+            id="weatherCity"
+            aria-describedby="weatherCity"
+            placeholder="Please enter a City!"
+            formControlName = city
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Get Weather</button>
+      </form>
+      
+      
+    </div>
+  </div>
+</div>
