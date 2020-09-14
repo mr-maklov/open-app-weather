@@ -26,7 +26,7 @@ export class CityComponent implements OnInit {
   sendToOpenWeatherApi(formValues) {
     this.Apiservice.getWeather(formValues.city).subscribe((data) => {
       this.setweatherData(data);
-    }).;
+    });
   }
 
   // tslint:disable-next-line: typedef
